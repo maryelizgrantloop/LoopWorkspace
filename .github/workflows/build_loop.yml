@@ -177,6 +177,12 @@ jobs:
       - name: Select Xcode version
         run: "sudo xcode-select --switch /Applications/Xcode_26.2.app/Contents/Developer"
 
+      - name: Confirm Xcode version
+        run: |
+              xcode-select -p
+              xcodebuild -version
+              xcrun --sdk iphoneos --show-sdk-version 
+
       - name: Checkout Repo for building
         uses: actions/checkout@v5
         with:
